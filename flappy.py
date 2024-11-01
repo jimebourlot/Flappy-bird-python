@@ -164,7 +164,6 @@ while begin:
                 bird.bump()
                 pygame.mixer.music.load(wing)
                 pygame.mixer.music.play()
-                begin = False
 
     screen.blit(background_day, (0, 0))
     screen.blit(BEGIN_IMAGE, (120, 150))
