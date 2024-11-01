@@ -16,7 +16,7 @@ GROUND_HEIGHT = 100
 PIPE_WIDHT = 80
 PIPE_HEIGHT = 500
 PIPE_GAP = 150
-cambioNivel = 2
+cambioNivel = 20
 
 wing = 'assets/audio/wing.wav'
 hit = 'assets/audio/hit.wav'
