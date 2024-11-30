@@ -54,7 +54,7 @@ pipe_green = pygame.image.load('assets/sprites/pipe-green.png').convert_alpha()
 pipe_red = pygame.image.load('assets/sprites/pipe-red.png').convert_alpha()
 pipe_image = pipe_green  # Initialize pipe_image with the default pipe
 
-BEGIN_IMAGE = pygame.image.load('assets/sprites/message.png').convert_alpha()
+BEGIN_IMAGE = pygame.image.load('assets/sprites_taller/message.png').convert_alpha()
 
 bird_group = pygame.sprite.Group()
 bird = Bird(hornero_images, hornero_images, SCREEN_WIDHT, SCREEN_HEIGHT, SPEED, GRAVITY, cambioNivel)
