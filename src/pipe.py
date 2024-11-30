@@ -35,7 +35,6 @@ class Pipe(pygame.sprite.Sprite):
 
 def get_random_pipes(xpos, SCREEN_HEIGHT, PIPE_WIDHT, PIPE_HEIGHT, PIPE_GAP, pipe_image, GAME_SPEED):
     size = random.randint(130, 500)
-    print(size)
     pipe = Pipe(False, xpos, size, pipe_image, PIPE_WIDHT, PIPE_HEIGHT, GAME_SPEED, SCREEN_HEIGHT)
     pipe_inverted = Pipe(True, xpos, SCREEN_HEIGHT - size - PIPE_GAP, pipe_image, PIPE_WIDHT, PIPE_HEIGHT, GAME_SPEED, SCREEN_HEIGHT)
     return pipe, pipe_inverted
