@@ -46,7 +46,7 @@ for i in range(1, 9):
     hornero_images.append(image)
 
 # Load pipe images
-pipe_green = pygame.image.load('assets/sprites_taller/tronco.png').convert_alpha()
+pipe_green = pygame.image.load('assets/sprites_taller/jacaranda.png').convert_alpha()
 pipe_red = pygame.image.load('assets/sprites/pipe-red.png').convert_alpha()
 pipe_image = pipe_green  # Initialize pipe_image with the default pipe
 
