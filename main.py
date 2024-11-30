@@ -6,8 +6,8 @@ from src.ground import Ground
 from src.utils import is_off_screen, draw_score
 
 # VARIABLES
-SCREEN_WIDHT = 400
-SCREEN_HEIGHT = 600
+SCREEN_WIDHT = 400*1.3
+SCREEN_HEIGHT = 600*1.3
 SPEED = 20
 GRAVITY = 2.5
 GAME_SPEED = 15
@@ -16,7 +16,7 @@ GROUND_HEIGHT = 100
 PIPE_WIDHT = 80
 PIPE_HEIGHT = 500
 PIPE_GAP = 150
-cambioNivel = 20
+cambioNivel = 2
 
 wing = 'assets/audio/wing.wav'
 hit = 'assets/audio/hit.wav'
@@ -34,9 +34,9 @@ pygame.display.set_caption('Flappy Bird')
 score_images = [pygame.image.load(f'assets/sprites/{i}.png').convert_alpha() for i in range(10)]
 
 # Load background images
-background_day = pygame.image.load('assets/sprites/background-day.png').convert()
+background_day = pygame.image.load('assets/sprites_taller/background-day.jpeg').convert()
 background_day = pygame.transform.scale(background_day, (SCREEN_WIDHT, SCREEN_HEIGHT))
-background_night = pygame.image.load('assets/sprites/background-night.png').convert()
+background_night = pygame.image.load('assets/sprites_taller/background-night.jpeg').convert()
 background_night = pygame.transform.scale(background_night, (SCREEN_WIDHT, SCREEN_HEIGHT))
 
 # Load bird images
@@ -86,7 +86,8 @@ while begin:
                 begin = False
 
     screen.blit(background_day, (0, 0))
-    screen.blit(BEGIN_IMAGE, (120, 150))
+    screen.blit(BEGIN_IMAGE, ((SCREEN_WIDHT/2) - (BEGIN_IMAGE.get_width()/2), (SCREEN_HEIGHT/2) - (BEGIN_IMAGE.get_height()/2)))
+
     if is_off_screen(ground_group.sprites()[0]):
         ground_group.remove(ground_group.sprites()[0])
         new_ground = Ground(GROUND_WIDHT - 20, SCREEN_HEIGHT, GROUND_WIDHT, GROUND_HEIGHT, GAME_SPEED)
