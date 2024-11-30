@@ -16,10 +16,11 @@ class Bird(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect[0] = SCREEN_WIDHT / 6
         self.rect[1] = SCREEN_HEIGHT / 2
+        self.rect[3] = 30
         self.screenheight = SCREEN_HEIGHT
 
     def update(self, score):
-        self.current_image = (self.current_image + 1) % 3
+        self.current_image = (self.current_image + 1) % 8
         self.image = self.images[self.current_image]
         self.speed += self.GRAVITY
         # UPDATE HEIGHT
@@ -33,11 +34,11 @@ class Bird(pygame.sprite.Sprite):
 
     def bump(self):
         self.speed = -self.SPEED
-        self.current_image = (self.current_image + 1) % 3
+        self.current_image = (self.current_image + 1) % 8
         self.image = self.images[self.current_image]
 
     def begin(self):
         self.rect[1] = self.screenheight / 2  # Reset position
         self.speed = 0  # Reset speed
-        self.current_image = (self.current_image + 1) % 3
+        self.current_image = (self.current_image + 1) % 8
         self.image = self.images[self.current_image]

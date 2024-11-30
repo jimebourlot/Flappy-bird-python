@@ -40,9 +40,10 @@ background_night = pygame.image.load('assets/sprites_taller/background-night.jpe
 background_night = pygame.transform.scale(background_night, (SCREEN_WIDHT, SCREEN_HEIGHT))
 
 # Load bird images
-bluebird_images = [pygame.image.load('assets/sprites/bluebird-upflap.png').convert_alpha(),
-                   pygame.image.load('assets/sprites/bluebird-midflap.png').convert_alpha(),
-                   pygame.image.load('assets/sprites/bluebird-downflap.png').convert_alpha()]
+hornero_images = []
+for i in range(1, 9):
+    image = pygame.image.load(f'assets/sprites_taller/hornero/hornero{i}.png').convert_alpha()
+    hornero_images.append(image)
 
 redbird_images = [pygame.image.load('assets/sprites/redbird-upflap.png').convert_alpha(),
                   pygame.image.load('assets/sprites/redbird-midflap.png').convert_alpha(),
@@ -56,7 +57,7 @@ pipe_image = pipe_green  # Initialize pipe_image with the default pipe
 BEGIN_IMAGE = pygame.image.load('assets/sprites/message.png').convert_alpha()
 
 bird_group = pygame.sprite.Group()
-bird = Bird(bluebird_images, redbird_images, SCREEN_WIDHT, SCREEN_HEIGHT, SPEED, GRAVITY, cambioNivel)
+bird = Bird(hornero_images, hornero_images, SCREEN_WIDHT, SCREEN_HEIGHT, SPEED, GRAVITY, cambioNivel)
 bird_group.add(bird)
 
 ground_group = pygame.sprite.Group()
