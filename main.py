@@ -45,12 +45,8 @@ for i in range(1, 9):
     image = pygame.image.load(f'assets/sprites_taller/hornero/hornero{i}.png').convert_alpha()
     hornero_images.append(image)
 
-redbird_images = [pygame.image.load('assets/sprites/redbird-upflap.png').convert_alpha(),
-                  pygame.image.load('assets/sprites/redbird-midflap.png').convert_alpha(),
-                  pygame.image.load('assets/sprites/redbird-downflap.png').convert_alpha()]
-
 # Load pipe images
-pipe_green = pygame.image.load('assets/sprites/pipe-green.png').convert_alpha()
+pipe_green = pygame.image.load('assets/sprites_taller/tronco.png').convert_alpha()
 pipe_red = pygame.image.load('assets/sprites/pipe-red.png').convert_alpha()
 pipe_image = pipe_green  # Initialize pipe_image with the default pipe
 
