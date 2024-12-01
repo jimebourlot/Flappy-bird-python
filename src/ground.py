@@ -3,7 +3,7 @@ import pygame
 class Ground(pygame.sprite.Sprite):
     def __init__(self, xpos, SCREEN_HEIGHT, GROUND_WIDHT, GROUND_HEIGHT, GAME_SPEED):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load('assets/sprites/base.png').convert_alpha()
+        self.image = pygame.image.load('assets/sprites_taller/base_mate.png').convert_alpha()
         self.image = pygame.transform.scale(self.image, (GROUND_WIDHT, GROUND_HEIGHT))
         self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
