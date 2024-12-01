@@ -157,5 +157,5 @@ while True:
         # Dibuja el texto en la pantalla
         screen.blit(text, (screen.get_width() // 2 - text.get_width() // 2, screen.get_height() // 2 + GAME_OVER_IMAGE.get_height() // 2 + 10))
         pygame.display.update()  # Actualiza la pantalla para mostrar la imagen y el texto
-        time.sleep(4)
+        time.sleep(3)
         break
