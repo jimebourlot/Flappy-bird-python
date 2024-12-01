@@ -12,11 +12,11 @@ SPEED = 20
 GRAVITY = 2.5
 GAME_SPEED = 15
 GROUND_WIDHT = 2 * SCREEN_WIDHT
-GROUND_HEIGHT = 100
-PIPE_WIDHT = 80
+GROUND_HEIGHT = 147.058
+PIPE_WIDHT = 70
 PIPE_HEIGHT = 500
 PIPE_GAP = 150
-cambioNivel = 2
+cambioNivel = 20
 
 wing = 'assets/audio/wing.wav'
 hit = 'assets/audio/hit.wav'
@@ -46,11 +46,15 @@ for i in range(1, 9):
     hornero_images.append(image)
 
 # Load pipe images
-pipe_green = pygame.image.load('assets/sprites_taller/jacaranda.png').convert_alpha()
-pipe_red = pygame.image.load('assets/sprites/pipe-red.png').convert_alpha()
+pipe_green = pygame.image.load('assets/sprites_taller/termo.png').convert_alpha()
+pipe_red = pygame.image.load('assets/sprites_taller/termo.png').convert_alpha()
 pipe_image = pipe_green  # Initialize pipe_image with the default pipe
 
 BEGIN_IMAGE = pygame.image.load('assets/sprites_taller/message.png').convert_alpha()
+GAME_OVER_IMAGE = pygame.image.load('assets/sprites/gameover.png').convert_alpha()
+# Definir la fuente y el texto
+font = pygame.font.Font(None, 26)  # Puedes cambiar el tamaño de la fuente si lo deseas
+text = font.render('El juego se cerrará automáticamente', True, (255, 255, 255))  # Texto en color blanco
 
 bird_group = pygame.sprite.Group()
 bird = Bird(hornero_images, hornero_images, SCREEN_WIDHT, SCREEN_HEIGHT, SPEED, GRAVITY, cambioNivel)
@@ -143,9 +147,15 @@ while True:
 
     pygame.display.update()
 
+    # Dentro del bucle principal del juego, en la sección de colisión
     if (pygame.sprite.groupcollide(bird_group, ground_group, False, False, pygame.sprite.collide_mask) or
             pygame.sprite.groupcollide(bird_group, pipe_group, False, False, pygame.sprite.collide_mask)):
         pygame.mixer.music.load(hit)
         pygame.mixer.music.play()
-        time.sleep(1)
+        # Dibuja la imagen de GAME OVER en la pantalla
+        screen.blit(GAME_OVER_IMAGE, (screen.get_width() // 2 - GAME_OVER_IMAGE.get_width() // 2, screen.get_height() // 2 - GAME_OVER_IMAGE.get_height() // 2))
+        # Dibuja el texto en la pantalla
+        screen.blit(text, (screen.get_width() // 2 - text.get_width() // 2, screen.get_height() // 2 + GAME_OVER_IMAGE.get_height() // 2 + 10))
+        pygame.display.update()  # Actualiza la pantalla para mostrar la imagen y el texto
+        time.sleep(4)
         break
